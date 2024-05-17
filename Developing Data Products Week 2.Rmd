@@ -1,0 +1,26 @@
+---
+title: "R Markdown and Leaflet"
+author: "Ceci Practice"
+date: "2024/5/17"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+install.packages("leaflet")
+library(leaflet)
+library(magrittr)
+```
+
+## R Markdown
+
+This is an R Markdown document. 
+
+```{r map}
+leaflet() %>%
+  addTiles() %>%
+  setView(lng = -93.65, lat = 42.0285, zoom = 4) %>%
+  addMarkers(lng = -93.65, lat = 42.0285, popup = "Iowa State University")
+
+```
+
